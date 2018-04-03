@@ -1,19 +1,13 @@
 $(document).ready(function () {
 
-    var stickyNavTop = $('.navbar').offset().top;
-    var stickyNav = function () {
-        var scrollTop = $(window).scrollTop();
-        if (scrollTop > stickyNavTop) {
-            $('.navbar').addClass('sticky');
-        } else {
-            $('.navbar').removeClass('sticky');
-        }
-    };
+    stickyNavigationBar();
+    $('.slides').slick();
+    fluentScroll();
 
-    stickyNav();
-    $(window).scroll(function () {
-        stickyNav();
-    });
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        $('.navbar').hide();
+        $('.navbar-wrapper').hide();
+    }
 
     particlesJS('particles-js',
 
@@ -133,11 +127,43 @@ $(document).ready(function () {
                 "background_size": "cover"
             }
         }
-
     );
+});
 
-    $('.slides').slick();
+var countDownDate = new Date("Apr 10, 2018 08:00:00").getTime();
+var x = setInterval(function () {
+    var now = new Date().getTime();
+    var distance = countDownDate - now;
 
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+
+    document.getElementById("timer").innerHTML = days + " dni i " + hours + " godzin";
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("timer").innerHTML = "Wydarzenie właśnie trwa!";
+    }
+}, 1000);
+
+function stickyNavigationBar() {
+    var stickyNavTop = $('.navbar').offset().top;
+    var stickyNav = function () {
+        var scrollTop = $(window).scrollTop();
+        if (scrollTop > stickyNavTop) {
+            $('.navbar').addClass('sticky');
+        } else {
+            $('.navbar').removeClass('sticky');
+        }
+    };
+
+    stickyNav();
+    $(window).scroll(function () {
+        stickyNav();
+    });
+}
+
+function fluentScroll() {
     $('a[href*="#"]')
         .not('[href="#"]')
         .not('[href="#0"]')
@@ -165,27 +191,4 @@ $(document).ready(function () {
                 }
             }
         });
-
-    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        $('.navbar').hide();
-        $('.navbar-wrapper').hide();
-    }
-
-});
-
-var countDownDate = new Date("Apr 10, 2018 08:00:00").getTime();
-var x = setInterval(function () {
-    var now = new Date().getTime();
-    var distance = countDownDate - now;
-
-    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-
-
-    document.getElementById("timer").innerHTML = days + " dni i " + hours + " godzin";
-
-    if (distance < 0) {
-        clearInterval(x);
-        document.getElementById("timer").innerHTML = "Wydarzenie właśnie trwa!";
-    }
-}, 1000);
+}
