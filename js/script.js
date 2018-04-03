@@ -1,13 +1,10 @@
+
 $(document).ready(function () {
 
+    $('#navbar-s').hide();
     stickyNavigationBar();
     $('.slides').slick();
     fluentScroll();
-
-    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        $('.navbar').hide();
-        $('.navbar-wrapper').hide();
-    }
 
     particlesJS('particles-js',
 
@@ -192,3 +189,35 @@ function fluentScroll() {
             }
         });
 }
+
+
+var navbarSwitch = document.getElementById('navbar-switch');
+var navigationVisible = false;
+var navbarButtons = document.getElementsByClassName('navbar-s-button');
+
+function toggleNavigation() {
+    navigationVisible = !navigationVisible;
+    updateNavigation();
+}
+
+function updateNavigation() {
+    
+    if(navigationVisible) {
+        $('#navbar-s').slideDown();
+        $('#navbar-icon').attr('class', 'ion-android-close');
+    }
+    else {
+        $('#navbar-s').slideUp();
+        $('#navbar-icon').attr('class', 'ion-android-menu');
+    }
+}
+
+navbarSwitch.addEventListener("click", toggleNavigation, false);
+
+for(var i=0; i<navbarButtons.length; i++) {
+    navbarButtons[i].onclick = function (){
+        $('#navbar-s').slideUp();
+        $('#navbar-icon').attr('class', 'ion-android-menu');
+    }
+}
+

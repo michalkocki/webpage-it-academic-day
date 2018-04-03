@@ -40,6 +40,39 @@ body {
     color: #1c1c1c;
     cursor: pointer; }
 
+#navbar-switch {
+  position: fixed;
+  top: 2%;
+  left: 2%;
+  padding: 5px 10px;
+  border-radius: 50%;
+  visibility: hidden;
+  z-index: 3;
+  color: #7786c2;
+  font-size: 150%;
+  border: 1px solid rgba(227, 227, 227, 0.3);
+  background: rgba(227, 227, 227, 0.3); }
+
+#navbar-s {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: #e3e3e3;
+  padding-top: 10%; }
+  #navbar-s img {
+    width: 50%; }
+  #navbar-s a:link,
+  #navbar-s a:visited {
+    display: block;
+    text-align: center;
+    margin: 30px 0;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 80%; }
+
 .sticky {
   position: fixed;
   width: 100%;
@@ -298,7 +331,14 @@ footer p {
     margin-top: 25px; }
 
   swipe-down {
-    font-size: 1rem; } }
+    font-size: 1rem; }
+
+  .navbar-wrapper,
+  .navbar {
+    visibility: hidden; }
+
+  #navbar-switch {
+    visibility: visible; } }
 @media screen and (orientation: landscape) {
   .welcome-container img {
     width: 40%; }
@@ -308,6 +348,17 @@ footer p {
 
   h2,
   a.button {
-    font-size: 2vw; } }
+    font-size: 2vw; }
+
+  #navbar-s {
+    padding-top: 10%; }
+
+  .navbar-s-logo {
+    float: left;
+    width: 50%; }
+
+  .navbar-s-links {
+    float: right;
+    width: 50%; } }
 
 /*# sourceMappingURL=style.css.map */
