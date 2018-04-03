@@ -1,0 +1,378 @@
+$lightBlue: #7786c2;
+$darkBlue: #343d63;
+$light: #e3e3e3;
+$dark: #1c1c1c;
+html {
+    background-color: $light;
+    color: $dark;
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+    text-align: center;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar,
+.navbar-wrapper {
+    width: 100%;
+    margin: 0;
+    background: $lightBlue;
+    line-height: 25px;
+    height: 50px;
+    display: block;
+    z-index: 1;
+    a:link,
+    a:visited {
+        padding: 20px 40px;
+        text-decoration: none;
+        font-size: 70%;
+        font-weight: 300;
+        line-height: 50px;
+        color: $light;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        transition: all 0.3s ease-in-out;
+    }
+    a:hover,
+    a:active {
+        color: $dark;
+        cursor: pointer;
+    }
+}
+
+.sticky {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    border-top: 0;
+}
+
+/* Utilities */
+
+.clearfix {
+    zoom: 1
+}
+
+.clearfix:after {
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+h1 {
+    font-size: 3vw;
+    letter-spacing: 3px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 1.5vw;
+    letter-spacing: 2px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-size: 1.5vw;
+    letter-spacing: 2px;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding: 75px;
+    margin: 0;
+}
+
+p {
+    letter-spacing: 1px;
+    text-align: justify;
+    line-height: 40px;
+}
+
+.in-section {
+    padding: 20px;
+}
+
+.light-line:after {
+    display: block;
+    content: " ";
+    width: 20%;
+    height: 1px;
+    margin: 20px auto;
+    background-color: $light;
+}
+
+.dark-line:after {
+    display: block;
+    content: " ";
+    width: 20%;
+    height: 1px;
+    margin: 20px auto;
+    background-color: $dark;
+}
+
+.light {
+    color: $light;
+}
+
+a:link,
+a:visited {
+    color: $darkBlue;
+    transition: color 0.2s ease-in-out;
+}
+
+a:hover,
+a:active {
+    color: $lightBlue;
+}
+
+a.button {
+    appearance: button;
+    text-decoration: none;
+    margin-top: 50px;
+    background-color: $lightBlue;
+    color: $light;
+    border: 1px solid $lightBlue;
+    border-radius: 20px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.5vw;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+a.button:hover {
+    background-color: $darkBlue;
+    color: $light;
+    border: 1px solid $darkBlue;
+}
+
+/* Section: Welcome Page */
+
+.section-welcome {
+    height: 100vh;
+}
+
+.welcome-container {
+    position: absolute;
+    width: 30%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.swipe-down {
+    text-align: center;
+    font-size: 2rem;
+    color: $darkBlue;
+    transition: color 0.2s ease-in-out;
+    position: absolute;
+    width: 100%;
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.swipe-down:hover {
+    color: $lightBlue;
+    cursor: pointer;
+}
+
+/* Section: About */
+
+.section-about {
+    background-color: $dark;
+}
+
+.about-description {
+    font-weight: 300;
+    margin: 0 20%;
+}
+
+.about-timer {
+    padding: 25px 0;
+}
+
+.timer {
+    font-size: 3vw;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-align: center;
+    color: $lightBlue;
+    margin-bottom: 100px;
+}
+
+/* Section: Map */
+
+.section-map {
+    svg {
+        width: 70px;
+        border: 1px solid $darkBlue;
+        background-color: $darkBlue;
+        fill: $light;
+        border-radius: 50%;
+        padding: 20px;
+    }
+}
+
+.map {
+    margin: 40px 0;
+}
+
+.buses {
+    margin: 100px 0;
+}
+
+.bus-lines {
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    li {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        padding: 5px;
+        margin: 10px;
+        border: 1px solid $lightBlue;
+        border-radius: 40px;
+        font-weight: 700;
+        color: $light;
+        background-color: $lightBlue;
+    }
+}
+
+/* Section: Gallery */
+
+.section-gallery {
+    background-color: $dark;
+}
+
+.gallery {
+    width: 75%;
+    margin: 0 auto;
+    padding-bottom: 100px;
+}
+
+/* Section: Sponsors */
+
+.section-sponsors {
+    img {
+        width: 50%;
+        margin: 0 auto;
+    }
+}
+
+.sponsors {
+    margin-bottom: 100px;
+}
+
+/* Footer */
+
+footer {
+    p {
+        font-size: 10px;
+        color: $lightBlue;
+        text-align: center;
+    }
+}
+
+/* RWD */
+
+@media all and (max-width: 800px) {
+    .welcome-container {
+        width: 60%;
+    }
+    h1,
+    .timer {
+        font-size: 5vw;
+    }
+    h2 {
+        font-size: 3vw;
+    }
+    h3 {
+        font-size: 3vw;
+        padding: 40px;
+    }
+    p {
+        font-size: 2vw;
+        line-height: 30px;
+    }
+    .buses {
+        margin-top: 50px;
+    }
+    .about-description {
+        margin: 0 10%;
+    }
+    swipe-down {
+        font-size: 1rem;
+    }
+    .section-sponsors {
+        img {
+            width: 80%;
+        }
+    }
+    .navbar {
+        a:link,
+        a:visited {
+            padding: 0 20px;
+            background-color: $lightBlue;
+        }
+    }
+}
+
+@media all and (max-width: 600px) {
+    .welcome-container {
+        width: 80%;
+    }
+    h1,
+    .timer {
+        font-size: 6vw;
+    }
+    h2,
+    a.button {
+        font-size: 3vw;
+    }
+    h3 {
+        font-size: 4vw;
+        padding: 30px;
+    }
+    p {
+        font-size: 3vw;
+        line-height: 20px;
+    }
+    .about-description {
+        margin: 0 5%;
+    }
+    .buses {
+        margin-top: 25px;
+    }
+    swipe-down {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (orientation: landscape) {
+    .welcome-container {
+        img {
+            width: 40%;
+        }
+    }
+    h1,
+        {
+        font-size: 3vw;
+    }
+    h2,
+    a.button {
+        font-size: 2vw;
+    }
+}
